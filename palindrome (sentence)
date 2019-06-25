@@ -1,0 +1,17 @@
+str1="my madam's mother tongue is malayalam "
+str2=str1.replace("'"," ")
+str2=str2.split(' ')
+print(str2)
+for t in range (0,len(str2),1):
+  s=str2[t]
+  if s==s[::-1] and len(s)>1:
+    print(s)
+ 
+ 
+ 
+ OUTPUT:
+ 
+ 
+['my', 'madam', 's', 'mother', 'tongue', 'is', 'malayalam', '']
+madam
+malayalam
