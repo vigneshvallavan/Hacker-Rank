@@ -1,0 +1,59 @@
+n=list(map(int,input().split()))
+l=[]
+m=[]
+i=0
+if len(n)==1 :
+    print("1")
+else:
+    for t in range(0,len(n)-1,1):
+        if i==0:
+            if n[t]>n[t+1]:
+                l.append(n[t])
+                i=1
+            else:
+                l.append(n[t])
+                i=2
+        elif i==1:
+            if n[t]<n[t+1]:
+                l.append(n[t])
+                i=2
+            else:
+                m.append(len(l))
+                l=[]
+                l.append(n[t])
+                i=1
+        elif i==2:
+            if n[t]>n[t+1]:
+                l.append(n[t])
+                i=1
+            else:
+                m.append(len(l))
+                l=[]
+                l.append(n[t])
+                i=2
+    if len(m)==0:
+        print(len(n))
+    else:
+        print(max(m)+1)    
+        
+        
+        
+Sample Input 0
+
+          9 4 2 10 7 8 8 1 9
+          Sample Output 0
+
+          5
+          Explanation 0
+
+          (A[1] > A[2] < A[3] > A[4] < A[5])
+          
+Sample Input 1
+
+          2 3 5
+          Sample Output 1
+
+          2
+          Explanation 1
+
+          A[1]          
