@@ -1,0 +1,41 @@
+n,m=map(int,input().split())
+l1=list(map(int,input().split()))
+l2=list(map(int,input().split()))
+l=[]
+for  i in range(0,n,1):
+    for j in range(0,m,1):
+        c=int(l1[i])+int(l2[j])
+        if c not in l:
+            l.append(c)
+print(len(l))
+
+
+***************************************************************************************************************************************************
+
+Sample Input 0
+
+  2 1
+  3 2
+  3
+Sample Output 0
+
+  2
+Explanation 0
+
+  There are 2 possible pairs [3,3] and [2,3]
+
+  Both the pairs have distinct sum (ie.) 6 and 5. Hence output is 2.
+  
+Sample Input 1
+
+  2 1
+  3 3 
+  3
+Sample Output 1
+
+  1
+Explanation 1
+
+  There are 2 possible pairs [3,3] and [3,3].
+
+  Both pairs have the same sum 6. Hence output is 1.
