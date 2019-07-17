@@ -1,0 +1,32 @@
+n=int(input())
+l=list(map(int,input().split()))
+l.sort()
+d=[]
+c=list(set(l))
+for i in c:
+        d.append(l.count(i))
+for i in range(len(d)):
+    a=max(d)
+    for j in range(a):
+        print(c[d.index(a)],end=" ")
+    c.remove(c[d.index(a)])
+    d.remove(a)
+************************************************************************************************************
+Sample Input 0
+
+          6
+          5 4 5 3 6 4
+          
+Sample Output 0
+
+          4 4 5 5 3 6
+Explanation 0
+
+              There are 6 elements. 4 and 5 have a frequency of 2. Since 4 < 5, 4 comes before 5 in the result. Similarly, 3 and 6 have a frequency of 1. Since, 3 < 6, 3 comes before 6 in the result.
+Sample Input 1
+
+          7
+          4 3 7 7 3 4 1
+Sample Output 1
+
+          3 3 4 4 7 7 1
