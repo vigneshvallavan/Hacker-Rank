@@ -1,0 +1,35 @@
+n=input()
+ans=0
+for i in range(0,len(n)-1):
+    a=i+1
+    s=""
+    s=s+n[i]
+    while a<len(n):
+        if n[a] not in s:
+            s=s+n[a]
+        else:
+            break
+        a+=1
+    length=len(s)
+    if length>ans:
+        ans=length
+print(ans)
+*****************************************************************************************************
+Sample Input 0
+
+ABDEFGABEF
+Sample Output 0
+
+6
+Explanation 0
+
+The longest substring in the given string 'ABDEFGABEF' with no repeating characters is 'BDEFGA'. The length of 'BDEFGA' is 6.
+Sample Input 1
+
+ydjofwoqwv
+Sample Output 1
+
+6
+Explanation 1
+
+The substring is ydjofw. Length is 6.
