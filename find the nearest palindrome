@@ -1,0 +1,84 @@
+l=int(input())
+l1=list(map(int,input().split()))
+s=""
+for t in range(0,l):
+    s=s+str(l1[t])
+n1=int(s)
+i=0
+j=l-1
+if l%2!=0:
+    while i!=j:
+        l1[j]=l1[i]
+        j-=1
+        i+=1
+    s1=""
+    for t in range(0,l):
+        s1=s1+str(l1[t])
+    n2=int(s1)
+    if s1==s1[::-1] and n1<n2:
+            for t in range(0,l,1):
+                print(l1[t],end="")
+                print(" ",end="")
+    else:
+        temp=l1[l//2]
+        l1[l//2]=temp+1
+        temp1=l1[l//2]
+        while l1[l//2]>=10:
+            l1[l//2]=temp1%10
+            temp=l1[(l//2)-1]
+            te=l1[(l//2)+1]
+            l1[(l//2)-1]=temp+temp1//10  
+            l1[(l//2)+1]=te+temp1//10
+        for t in range(0,l,1):
+            print(l1[t],end="")
+            print(" ",end="")
+else:
+    while i<j:
+        l1[j]=l1[i]
+        j-=1
+        i+=1
+    s1=""
+    for t in range(0,l):
+        s1=s1+str(l1[t])
+    n2=int(s1)
+    if n1<n2 and s1==s1[::-1]:
+        for t in range(0,l,1):
+            print(l1[t],end="")
+            print(" ",end="")
+    else:
+        a=l1[l//2]
+        b=l1[(l//2)-1]
+        if a==b:
+            l1[l//2]=a+1
+            l1[(l//2)-1]=a+1
+        elif a<b:
+            l1[l//2]=a+1
+            l1[(l//2)-1]=l1[l//2]
+        else:
+            l1[l//2]=l1[(l//2)+1]
+        
+        for t in range(0,l,1):
+            print(l1[t],end="")
+            print(" ",end="")
+   *************************************************************************************************************************
+   Sample Input 0
+
+11
+9 4 1 8 7 9 7 8 3 2 2
+Sample Output 0
+
+9 4 1 8 8 0 8 8 1 4 9
+Explanation 0
+
+The given number has 11 digits.Each digit is represeted as an element of an array.
+
+Now, the given number is 94187978322. The nearest number that is a palindrome as well as greater than the given number is 94188088149.
+
+Hence, We print each digit of the obtained palindrome seperated by spaces.
+Sample Input 1
+
+11
+8 9 7 4 2 4 1 3 9 4 3
+Sample Output 1
+
+8 9 7 4 2 4 2 4 7 9 8 
