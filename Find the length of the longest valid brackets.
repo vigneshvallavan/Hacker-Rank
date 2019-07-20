@@ -1,0 +1,30 @@
+str1=input()
+l1=[0]*(len(str1)+1)
+stack = []
+for t in range(0,len(str1)):
+    if str1[t]=="(":
+        stack.append(t)
+    else:
+        if stack:
+            p=stack.pop()
+            l1[t+1]=l1[p]+t-p+1
+print(max(l1))
+*************************************************************************************************************
+Sample Input 0
+
+     ((()
+Sample Output 0
+
+      2
+Explanation 0
+
+      The longest valid brackets are '()'. Length is 2.
+Sample Input 1
+
+      ()(((()())
+Sample Output 1
+
+      6
+Explanation 1
+
+      The longest valid brackets are '(()())'. Length is 6.
