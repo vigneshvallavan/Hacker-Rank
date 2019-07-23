@@ -1,0 +1,39 @@
+r,c=map(int,input().split())
+l1=list(map(int,input().split()))
+l2=[]
+k=0
+for i in range(0,r):
+    a=[]
+    for j in range(0,c):
+        a.append(l1[k])
+        k+=1
+    l2.append(a)
+l1=[]
+r1=0;c1=0
+while r1<r and c1<c:
+    for i in range(c1,c):
+        l1.append(l2[r1][i])
+    r1+=1
+    for i in range(r1,r):
+        l1.append(l2[i][c-1])
+    c-=1
+    if r1<r:
+        for i in range(c-1,c1-1,-1):
+            l1.append(l2[r-1][i])
+        r-=1
+    if c1<c:
+        for i in range(r-1,r1-1,-1):
+            l1.append(l2[i][c1])
+        c1+=1 
+for t in l1:
+    print(t,end="")
+    print(" ",end="")
+******************************************************************************************************************************
+
+Sample Input 0
+
+4 4
+10 17 12 7 18 14 8 3 6 7 8 1 12 3 6 4
+Sample Output 0
+
+10 17 12 7 3 1 4 6 3 12 6 18 14 8 8 7
