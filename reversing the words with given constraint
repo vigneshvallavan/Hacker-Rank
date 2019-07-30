@@ -1,0 +1,54 @@
+s=input().split(" ")
+c=int(input())
+s2=""
+if c==0:
+    for i in range(0,len(s)):
+        l=str(s[i])
+        l=l[::-1]
+        s2=s2+l
+        s2=s2+" "
+    print(s2)
+elif c==1:
+    for i in range(0,len(s)):
+        s2=""
+        l2=[]
+        l=str(s[i])
+        for i in range(0,len(l)):
+            if l[i].isupper():
+                l2.append(i)
+        l=l[::-1]
+        l=l.lower()
+        s2=s2+l
+        s2=s2+" "
+        for t in range(0,len(s2)):
+            if t not in l2:
+                print(s2[t],end="")
+            else:
+                print(s2[t].upper(),end="")
+ ******************************************************************************************************************************
+    CONSTRAINTS:
+        if case_option = 0, Normal reversal or words i.e. If the original sentence is “Wipro TechNologies BangaLore”, 
+                            the new reversed sentence should be “opriW seigaloNhceT eroLagnaB”
+
+        if case_option = 1, Reversal of words with retaining position's Case i.e. if the original sentence is 
+                            “Wipro TechNologies BangaLore”, the new reversed sentence should be “Orpiw seighOlonhcet ErolaGnab” 
+                            Note that positions 1, 7, 11, 20 and 15 in the original string are uppercase W, T, N, B and L. 
+                            Similarly positions 1, 7, 11, 20 and 15 in the new string are uppercase O, S, O, E and G.
+************************************************************************************************************************************
+TEST CASE !:
+          Sample Input 0
+          Wipro TechNologies BangaLore
+          0
+          
+          Sample Output 0
+          opriW seigoloNhceT eroLagnaB
+          
+          Explanation 0
+          Normal reversal of words as case is 0 dont consider about cases
+TEST CASE 2:
+          Sample Input 1
+          hI viGnesH
+          1
+          
+          Sample Output 1
+          iH hsEngiV 
